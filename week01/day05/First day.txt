@@ -1,3 +1,0 @@
-Setting up Android studio and gone through some customization and settings.
-Learnd how to add a virtual emulator to inspect how the App runs.
-That's All!!!
