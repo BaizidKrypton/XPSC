@@ -18,25 +18,24 @@ int main()
         } 
 
         sort(v.begin(),v.end());
-        int sz=v.size();
-        int loop;
-        if(sz%2==0)
-        {
-            loop=sz/2;
-        }
-        else
-        {
-            loop=(sz/2)+1;
-        }
-        int min_range;
-        int idx=0;
-        for(int i=1; i<=loop; i++)
-        {
-            int mn=v[n-i]-v[idx];
-            min_range=min(min_range,mn);
-            idx++;
-        }
-        cout<<min_range<<endl;
+        vector<int> v1=v;
+        v1.erase(v1.begin());
+        v1.erase(v1.begin());
+        int op1=v1[v1.size()-1]-v1[0];
+
+        vector<int> v2=v;
+        v2.pop_back();
+        v2.pop_back();
+        int op2=v2[v2.size()-1]-v2[0];
+
+        vector<int> v3=v;
+        v3.erase(v3.begin());
+        v3.pop_back();
+        int op3=v3[v3.size()-1]-v3[0];
+
+        int ans=min(op1,op2);
+        ans=min(ans,op3);
+        cout<<ans<<endl;
     }
 
     return 0;
