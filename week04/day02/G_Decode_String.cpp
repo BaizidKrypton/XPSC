@@ -12,45 +12,38 @@ int main()
         string s;
         cin>>s;
         string ans;
-        vector<int> v;
-        for(char x:s)
+        
+        vector<char> alpha;
+        for(char c='a'; c<='z'; c++)
         {
-            if(isdigit(x))
+            alpha.push_back(c);
+        }
+
+        while(!s.empty())
+        {
+            if(s.size()>=3 && s[s.size()-1]=='0')
             {
-                v.push_back(x-'0');
+                string s2;
+                s2+=s[s.size()-3];
+                s2+=s[s.size()-2];
+                int val=stoi(s2);
+                ans+=alpha[val-1];
+                s.pop_back();
+                s.pop_back();
+                s.pop_back();
+            }
+            else
+            {
+                string s3;
+                s3+=s[s.size()-1];
+                int val=stoi(s3);
+                ans+=alpha[val-1];
+                s.pop_back();
             }
         }
-        
-        for(auto x:v)
-        {
-            cout<<x<<" ";
-        }
-        // pair<char,int> p[26];
-        // int i=1;
-        // for(char c='a'; c<='z'; c++)
-        // {
-        //     p[0]={c,i};
-        //     i++;
-        // }
-        
-        // while(!s.empty())
-        // {
-        //     if(s.size()>=3)
-        //     {
-        //         if(s[2]=='0')
-        //         {
-
-        //         }
-        //     }
-        //     else
-        //     {
-        //         ans+=p[s[0]-1].first;
-        //         s.erase(0,1);
-        //     }
-        // }
-        // cout<<ans<<endl;
-
-    }
+        reverse(ans.begin(),ans.end());
+        cout<<ans<<endl;
+     }
 
     return 0;
 }
