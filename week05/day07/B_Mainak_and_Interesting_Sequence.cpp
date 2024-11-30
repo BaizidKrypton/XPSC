@@ -24,8 +24,8 @@ int main()
                 ans[i]=1;
                 sum++;
             }
-            ans[n-2]=m-sum;
-            ans[n-1]=m-sum;
+            ans[n-2]=(m-sum)/2;
+            ans[n-1]=ans[n-2];
             for(int v:ans)
             {
                 cout<<v<<" ";
