@@ -1,19 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define mod 1000000007
- 
-int n; 
  
 int main()
 {
-	int T;
-    cin >> T;
+	int t;
+    cin>>t;
  
-    while (T--) {
+    while(t--) 
+    {
+        int n;
         cin>>n;
-        if(n <= 3) cout<<"1\n";
-        else cout<<n/2<<endl;
+        if(n <= 3)
+        {
+            cout<<"1"<<endl;
+        } 
+        else 
+        {
+            cout<<n/2<<endl;
+        }
     }
+    
 	return 0;
 }
