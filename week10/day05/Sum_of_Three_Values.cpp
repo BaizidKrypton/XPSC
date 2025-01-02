@@ -6,34 +6,42 @@ int main()
 {
     int n,x;
     cin>>n>>x;
-    vector<int> v(n);
+    vector<pair<ll,int>> v;
     for(int i=0; i<n; i++)
     {
-        cin>>v[i];
+        int x;
+        cin>>x;
+        v.push_back({x,i});
     }
 
-    int flag=0;
-    
-    for(int i=0; i<n; i++)
+    sort(v.begin(),v.end());
+    ll tmp;
+
+    for(int i=0; i<n-2; i++)
     {
-        for(int j=i+1; j<n; j++)
+        int left=x-v[i].first;
+        int j=i+1;
+        int k=n-1;
+
+        while(j<k)
         {
-            for(int k=j+1; k<n; k++)
+            tmp=v[j].first+v[k].first;
+            if(tmp==left)
             {
-                if(v[i]+v[j]+v[k]==x)
-                {
-                    cout<<i+1<<" "<<j+1<<" "<<k+1<<endl;
-                    flag=1;
-                    break;
-                }
+                cout<<v[i].second+1<<" "<<v[j].second+1<<" "<<v[k].second+1<<endl;
+                return 0;
+            }
+            if(tmp<left)
+            {
+                j++;
+            }
+            else
+            {
+                k--;
             }
         }
     }
-
-    if(flag==0)
-    {
-        cout<<"IMPOSSIBLE"<<endl;
-    }
+    cout<<"IMPOSSIBLE"<<endl;
 
     return 0;
 }
