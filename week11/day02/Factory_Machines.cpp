@@ -9,9 +9,9 @@ int main()
     int n,t;
     cin>>n>>t;
     vector<int> a(n);
-    for(int i = 0;i < n;i++) 
+    for(int i=0; i<n; i++) 
     {
-        cin >> a[i];
+        cin>>a[i];
     }
 
     auto ok=[&](long long seconds) 
@@ -31,7 +31,7 @@ int main()
     long long l=1, r=1e18, mid, ans;
     while(l<=r) 
     {
-        mid=l+(r-l)/2;
+        mid=(l+r)/2;
         if(ok(mid)) 
         {
             ans=mid;
