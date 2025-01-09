@@ -8,32 +8,33 @@ int main()
 
     string t,p;
     cin>>t>>p;
+
     int n=t.size();
     int m=p.size();
-    vector<int> a(n);
-    for(int i=0; i<n; i++) 
+    vector<int> v(n);
+    for(int i=0; i<n; i++)
     {
-        cin>>a[i];
-        a[i]--;
+        cin>>v[i];
+        v[i]--;
     }
 
     bool found=false;
     auto ok=[&](int del)
     {
         vector<bool> bad(n);
-        for(int i=0; i<=del; i++) 
+        for(int i=0; i<=del; i++)
         {
-            bad[a[i]]=true;
+            bad[v[i]]=true;
         }
 
         int j=0;
-        for(int i=0; i<n; i++) 
+        for(int i=0; i<n; i++)
         {
-            if(!bad[i] && t[i]==p[j]) 
+            if(!bad[i] && t[i]==p[j])
             {
                 j++;
             }
-            if(j==m) 
+            if(j==m)
             {
                 found=true;
                 return true;
@@ -42,22 +43,29 @@ int main()
         return false;
     };
 
-    int l=0, r=n-1, mid, ans=0;
-    while(l<=r) 
+    int l=0, r=n-1, mid, ans; 
+    while(l<=r)
     {
-        mid=l+(r-l)/2;
-        if(ok(mid)) 
+        mid=(l+r)/2;
+        if(ok(mid))
         {
             ans=mid;
             l=mid+1;
         }
-        else 
+        else
         {
             r=mid-1;
         }
     }
 
-    cout<<(found ? ans+1:ans)<<endl;
+    if(found)
+    {
+        cout<<ans+1<<endl;
+    }
+    else
+    {
+        cout<<"0"<<endl;
+    }
     
     return 0;
 }
