@@ -26,7 +26,8 @@ int main()
             ll sum=0;
             for(int i=0; i<n; i++)
             {
-                ll z=(x-1ll)/c[i];
+                ll z=(x-1)/c[i];
+                z+=1;
                 sum+=(z*a[i]);
                 if(sum>=h)
                 {
@@ -39,15 +40,15 @@ int main()
         ll l=1, r=2e12, mid, ans=r;
         while(l<=r)
         {
-            mid=(l+r)/2ll;
+            mid=(l+r)/2;
             if(ok(mid))
             {
                 ans=min(ans,mid);
-                r=mid-1ll;
+                r=mid-1;
             }
             else
             {
-                l=mid+1ll;
+                l=mid+1;
             }
         }
         cout<<ans<<endl;
