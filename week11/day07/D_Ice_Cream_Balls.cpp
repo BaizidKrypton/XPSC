@@ -32,8 +32,8 @@ int main()
             }
         }
 
-        
-        cout<<ans<<endl;
+        ll val=n-(ans*(ans-1))/2;
+        cout<<ans+val<<endl;
     }
 
     return 0;
