@@ -11,27 +11,28 @@ int main()
         cin>>x>>n>>m;
 
         bool flag=false;
-        while(n>0 || m>0)
+        while(n>0 && x>=20)
         {
-            int tmp=x;
-            int attack1=(tmp/2)+10;
-            int attack2=tmp-10;
-
-            if(attack1<=attack2 && n>0)
-            {
-                x=attack1;
-                n--;
-            }
-            else if(m>0)
-            {
-                x=attack2;
-                m--;
-            }
-
+            x=(x/2)+10;
+            n--;
             if(x<=0)
             {
                 flag=true;
                 break;
+            }
+        }
+        
+        if(!flag)
+        {
+            while(m>0)
+            {
+                x-=10;
+                m--;
+                if(x<=0)
+                {
+                    flag=true;
+                    break;
+                }
             }
         }
 
