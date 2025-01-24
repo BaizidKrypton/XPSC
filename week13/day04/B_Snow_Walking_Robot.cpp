@@ -65,7 +65,7 @@ int main()
                     mn2=min(mn2,y);
                 }
             }
-            
+            cout<<mn1*2+mn2*2<<endl;
             
             for(int i=0; i<mn1; i++)
             {
