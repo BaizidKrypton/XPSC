@@ -32,7 +32,7 @@ int main()
             mp[v[i]]++;
         }
 
-        
+        cout<<ans<<endl;
     }
 
     return 0;
