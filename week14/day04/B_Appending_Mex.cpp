@@ -28,7 +28,10 @@ int main()
         }
     }
 
-
+    if(flag)
+    {
+        cout<<"-1"<<endl;
+    }
 
     return 0;
 }
