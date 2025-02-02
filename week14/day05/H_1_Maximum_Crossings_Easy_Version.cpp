@@ -17,6 +17,7 @@ int main()
             cin>>v1[i];
             v2.push_back(v1[i]);
         }
+        sort(v2.begin(),v2.end());
 
         int x;
         int sum=0;
@@ -33,7 +34,7 @@ int main()
             sum+=(x-1);
             v2.erase(v2.begin()+x-1);
         }
-
+        
         cout<<sum<<endl;
     }
 
