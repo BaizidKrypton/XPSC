@@ -24,7 +24,7 @@ int main()
         v[i]=a[i]-b[i];
     }
 
-    
+    sort(v.begin(),v.end());
 
     ll cnt=0;
     for(int i=0; i<n; i++)
