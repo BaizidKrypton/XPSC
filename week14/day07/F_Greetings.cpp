@@ -1,4 +1,4 @@
-cpp #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define ll long long
 #include<ext/pb_ds/assoc_container.hpp>
@@ -13,13 +13,13 @@ int main()
     cin>>t;
     while(t--)
     {
-        int n;
+        ll n;
         cin>>n;
 
-        vector<int> a(n);
-        vector<int> b(n);
-        set<int> s;
-        map<int,int> mp;
+        vector<ll> a(n);
+        vector<ll> b(n);
+        set<ll> s;
+        map<ll,ll> mp;
         pbds st;
 
         for(int i=0; i<n; i++)
@@ -30,13 +30,13 @@ int main()
         }
 
         sort(a.begin(),a.end());
-        int ans=0;
+        ll ans=0;
 
         for(int i=0; i<n; i++)
         {
-            int x=mp[a[i]];
-            int y=st.order_of_key(x);
-            int z=st.order_of_key(a[i]);
+            ll x=mp[a[i]];
+            ll y=st.order_of_key(x);
+            ll z=st.order_of_key(a[i]);
             ans+=(y-z);
             st.erase(x);
         }
