@@ -17,7 +17,7 @@ int main()
         {
             cin>>v[i];
             int x=v[i]%10;
-            
+            mp[x]++;
         }
 
         for(int i=0; i<10; i++)
