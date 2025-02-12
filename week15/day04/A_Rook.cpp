@@ -21,16 +21,6 @@ int main()
             }
         }
 
-        // string a="abcdefgh";
-        // char c;
-        // for(char i='a'; i<='h'; i++)
-        // {
-        //     if(s[0]==i)
-        //     {
-        //         c=i;
-        //     }
-        // }
-
         for(int i=1; i<=8; i++)
         {
             if(y==i)
