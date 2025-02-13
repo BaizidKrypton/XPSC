@@ -29,13 +29,37 @@ int main()
 
         if(b<k)
         {
+            int cnt=0;
+            int i=0;
+            int ans=0;
+            while(k-b!=cnt && i<n)
+            {
+                ans++;
+                if(s[i]=='A')
+                {
+                    cnt++;
+                }
+                i++;
+            }
             cout<<"1"<<endl;
-            cout<<k-b<<" "<<"B"<<endl;
+            cout<<ans<<" "<<"B"<<endl;
         }
         else if(b>k)
         {
+            int cnt=0;
+            int i=0;
+            int ans=0;
+            while(b-k!=cnt && i<n)
+            {
+                ans++;
+                if(s[i]=='B')
+                {
+                    cnt++;
+                }
+                i++;
+            }
             cout<<"1"<<endl;
-            cout<<b-k<<" "<<"A"<<endl;
+            cout<<ans<<" "<<"A"<<endl;
         }
         else
         {
