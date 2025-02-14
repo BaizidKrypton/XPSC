@@ -39,7 +39,7 @@ int main()
                     idx=b[i].first+x;
                 }
             }
-            cout<<s[idx-2]<<endl;
+            cout<<s[idx-1]<<endl;
         }
     }
 
