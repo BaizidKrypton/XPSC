@@ -35,6 +35,7 @@ int main()
             {
                 y=g[i].size()-1;
                 parentOfLeaf=i;
+                break;
             }
         }
 
