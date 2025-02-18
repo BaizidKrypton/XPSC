@@ -18,7 +18,7 @@ int main()
 
         int rq=1;
         int cnt=0;
-        int c=3;
+        int c=0;
 
         while(v.size()>1)
         {
