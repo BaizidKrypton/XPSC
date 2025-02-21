@@ -10,18 +10,18 @@ void dfs(int cur,int par)
 	bool child=false;
 
 	for(auto i:adj[cur])
-    {
+    	{
 		if(i==par)
-        {
-            continue;
-        }
+        	{
+            		continue;
+        	}
 		child=true;
 		dfs(i,cur);
 		leaf[cur]+=leaf[i];
 	}
 
 	if(!child)
-    {
+   	{
 		leaf[cur]=1;
 	}
 }
@@ -32,35 +32,35 @@ int main()
     cin>>t;
     while(t--)
     {
-   		int n;					
+   	int n;					
         cin>>n;
 
-   		for(int i=0; i<=n; i++)
+   	for(int i=0; i<=n; i++)
         {
-   			adj[i].clear();
-   		}
+   		adj[i].clear();
+   	}
 
-   		leaf.assign(n+2,0);
+   	leaf.assign(n+2,0);
 
-   		for(int i=1; i<=n-1; i++)
+   	for(int i=1; i<=n-1; i++)
         {
-   			int u,v;				
-            cin>>u>>v;
-   			adj[u].push_back(v);
-   			
-   		}
+   		int u,v;				
+            	cin>>u>>v;
+   		adj[u].push_back(v);
+   		adj[v].push_back(u);
+   	}
 
-   		dfs(1,-1);
-   		int q;					
+   	dfs(1,-1);
+   	int q;					
         cin>>q;
 
-   		while(q--)
+   	while(q--)
         {
-   			int x,y;				
-            cin>>x>>y;
-   			ll ans=leaf[x]*leaf[y];
-   			cout<<ans<<endl;
-   		}
+   		int x,y;				
+            	cin>>x>>y;
+   		ll ans=leaf[x]*leaf[y];
+   		cout<<ans<<endl;
+   	}
    }
 
     return 0;
