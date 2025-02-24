@@ -26,7 +26,7 @@ int main()
                 int power=1;
                 while(power<x)
                 {
-                    power=2;
+                    power*=2;
                 }
 
                 if(power!=x)
