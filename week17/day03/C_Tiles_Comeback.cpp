@@ -29,6 +29,7 @@ int main()
                 if(cnt_first==k)
                 {
                     pos_first=i;
+                    break;
                 }
             }
         }
