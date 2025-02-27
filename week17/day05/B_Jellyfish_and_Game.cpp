@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 
 int main()
@@ -7,10 +8,10 @@ int main()
     cin>>t;
     while(t--)
     {
-        int n,m,k;
+        ll n,m,k;
         cin>>n>>m>>k;
-        vector<int> a(n);
-        vector<int> b(m);
+        vector<ll> a(n);
+        vector<ll> b(m);
 
         for(int i=0; i<n; i++)
         {
@@ -49,8 +50,8 @@ int main()
             }   
         }
 
-        int ans=0;
-        for(int val:a)
+        ll ans=0;
+        for(ll val:a)
         {
             ans+=val;
         }
