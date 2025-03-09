@@ -92,7 +92,7 @@ int main()
          cin>>l>>r;
          l++;
          long long ans=query(1,1,n,l,r);
-         cout<<ans;
+         cout<<ans<<endl;
       }
    }
 
